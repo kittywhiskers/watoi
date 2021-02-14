@@ -19,8 +19,14 @@ typedef enum {
     MSG_CONTACT = 4,
     MSG_LOCATION = 5,
     MSG_CALL = 8,
+    MSG_DOCUMENT = 9,
     MSG_WTF = 10,
-    MSG_WTF2 = 13,
+    MSG_WTF2 = 11,
+    MSG_GIF = 13,
+    MSG_CONTACTS = 14,
+    MGS_REVOKED = 15,
+    MSG_LIVELOCATION = 16,
+    MSG_STICKER = 20,
 } WAMsgType;
 
 @interface Importer : NSObject
@@ -503,8 +509,14 @@ int main(int argc, const char * argv[]) {
                     case MSG_CONTACT: prefix = @"<contact>"; break;
                     case MSG_LOCATION: prefix = @"<location>"; break;
                     case MSG_CALL: prefix = @"<call>"; break;
+                    case MSG_DOCUMENT: prefix = @"<document>"; break;
                     case MSG_WTF: prefix = @"<unknown event>"; break;
                     case MSG_WTF2: prefix = @"<unknown event>"; break;
+                    case MSG_GIF: prefix = @"<gif>"; break;
+                    case MSG_CONTACTS: prefix = @"<contacts>"; break;
+                    case MGS_REVOKED: prefix = @"<revoked>"; break;
+                    case MSG_LIVELOCATION: prefix = @"<live location>"; break;
+                    case MSG_STICKER: prefix = @"<sticker>"; break;
                     case MSG_TEXT: break;
                 }
 
